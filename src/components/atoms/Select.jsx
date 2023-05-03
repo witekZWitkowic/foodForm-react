@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Input from './Input';
 
-const Select = () => {
+const Select = ({label}) => {
   const options = ["pizza", "soup", "sandwich"];
 
   const [food, setFood] = useState("pizza");
@@ -19,10 +19,11 @@ const Select = () => {
     setFood(e.target.value);
   }
   return (
-    <div>
-      <select value={food} onChange={handleOnChange}>
+    <div className='flex flex-col'>
+      <label>{label}</label>
+      <select value={food} onChange={handleOnChange} className='mb-10 border-b-[1px] border-zinc-300 focus:outline-none w-[200px]'>
         {options.map((option, index) => (
-          <option key={index} value={option}>{option}</option>
+          <option key={index} value={option} className=''>{option.toUpperCase()}</option>
         ))}
       </select>
       {pizza && 

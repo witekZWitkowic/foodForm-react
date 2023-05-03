@@ -2,3 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ------ Global ------ */
+
+html {
+    height: 100vh;
+    @apply
+    bg-cream;
+}
+/* ------ Container ------ */
+
+.form-container{
+  box-shadow:
+  2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+  22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  100px 100px 80px rgba(0, 0, 0, 0.07)
+;
+}
+
+/* ------ Text && BG ------ */
+
+.text-gradient {
+    background: 
+    linear-gradient(90deg, var(--c1, #f45106),
+    var(--c2, #fa8907) 51%, var(--c1, #f45106)) 
+    var(--x, 0)/ 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-orange-gradient {
+    transition: .5s;
+    background: 
+    linear-gradient(90deg, var(--c1, #f45106),
+    var(--c2, #fa8907) 51%, var(--c1, #f45106)) 
+    var(--x, 0)/ 200%;
+  }
+
+  /* ------ Buttons ------*/
+
+  .submit-button:hover{
+    --x: 100%;
+    -webkit-box-shadow: 8px 8px 20px -14px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 8px 8px 20px -14px rgba(66, 68, 90, 1);
+  box-shadow: 8px 8px 20px -14px rgba(66, 68, 90, 1);
+  }
+  
+  .submit-button:active {
+    transition: .5s;
+    -webkit-box-shadow: inset 8px 8px 20px -14px rgba(66, 68, 90, 1);
+  -moz-box-shadow: inset 8px 8px 20px -14px rgba(66, 68, 90, 1);
+  box-shadow: inset 8px 8px 20px -14px rgba(66, 68, 90, 1);
+  }
+
+  /* ------ Inputs and Select ------*/
+
+  option:hover{
+    color:#f45106
+  }
+
+  

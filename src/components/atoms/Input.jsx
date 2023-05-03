@@ -3,8 +3,8 @@ import { Field, reduxForm } from 'redux-form'
 
 const Input = ({label, name, type, step, min="0", max}) => {
   return (
-    <div>
-        <label>{label}</label>
+    <div className='relative'>
+        <label className='absolute focus:text-red-500'>{label}</label>
         <div>
             <input
             name={name}
@@ -12,6 +12,7 @@ const Input = ({label, name, type, step, min="0", max}) => {
             step={step}
             min={min}
             max={max}
+            className='mb-8 border-b-[1px] border-zinc-300 focus:outline-none'
             />
         </div>
     </div>
