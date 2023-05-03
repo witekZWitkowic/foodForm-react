@@ -1,19 +1,20 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 
-const Input = ({label, name, type, step}) => {
+const Input = ({label, name, type, step, min="0", max}) => {
   return (
-    <form>
+    <div>
         <label>{label}</label>
         <div>
             <input
             name={name}
             type={type}
             step={step}
-            min="0"
+            min={min}
+            max={max}
             />
         </div>
-    </form>
+    </div>
   )
 }
 
