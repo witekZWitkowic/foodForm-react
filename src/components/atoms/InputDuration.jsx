@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { Field, reduxForm } from 'redux-form'
 
-const Input = ({label, name, forName, type, step, min="0", max, register, errors}) => {
+const Input = ({label, name, forName, register, errors}) => {
 
   const [value, setValue] = useState("");
-  
+
+  const [isClicked, setIsClicked] = useState(false);
+ 
   const handleChange = (e) => {
     setValue(e.target.value);
   }
@@ -15,10 +16,11 @@ const Input = ({label, name, forName, type, step, min="0", max, register, errors
             <input
             {...register(name, {required: true})}
             name={name}
-            type={type}
-            step={step}
-            min={min}
-            max={max}
+            onClick={() => setIsClicked(true)}
+            onBlur={() => setIsClicked(false)}
+            type={isClicked ? "time" : "text"}
+            step="2"
+            maxLength="9"
             value={value}
             onInput={handleChange}
             className={`mb-10 pl-1 border-b-[1px] ${errors[name] ? "border-red-300" : "border-zinc-300"} focus:outline-none sm:w-[350px]`}
