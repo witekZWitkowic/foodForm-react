@@ -4,18 +4,17 @@ import Input from './Input';
 import { sandwichImg, pizzaImg, soupImg } from '../../assets/index';
 
 const Select = ({label, register, errors}) => {
-  const options = ["", "Pizza", "Soup", "Sandwich"];
+  const options = ["", "pizza", "soup", "sandwich"];
 
   const [food, setFood] = useState("");
   const [pizza, setPizza] = useState(false);
   const [soup, setSoup] = useState(false);
   const [sandwich, setSandwich] = useState(false);
 
-
   useEffect(() => {
-    food === "Pizza" ? setPizza(true) : setPizza(false);
-    food === "Soup" ? setSoup(true) : setSoup(false);
-    food === "Sandwich" ? setSandwich(true) : setSandwich(false);
+    food === "pizza" ? setPizza(true) : setPizza(false);
+    food === "soup" ? setSoup(true) :  setSoup(false);
+    food === "sandwich" ? setSandwich(true) : setSandwich(false);
   }, [food]);
 
   const handleOnChange = (e) => {
@@ -31,7 +30,7 @@ const Select = ({label, register, errors}) => {
       onChange={handleOnChange}
       className={`mb-10 border-b-[1px] text-[18px] text-zinc-600 ${errors.type ? "border-red-300" : "border-zinc-300"} focus:outline-none sm:w-[350px]`}>
         {options.map((option, index) => (
-          <option key={index} value={option} className=''>{option}</option>
+          <option key={index} value={option} className=''>{option.toUpperCase()}</option>
         ))}
       </select>
       {errors.type && <p className='text-[10px] absolute mt-7 ml-1 text-red-600'>{errors.type.message}</p>}
