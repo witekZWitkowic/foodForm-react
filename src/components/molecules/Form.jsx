@@ -1,14 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {useForm} from 'react-hook-form';
 import {Input, Select, Button, InputDuration} from '../index';
+import axios from 'axios';
 
 const Form = () => {
 
   const {register, handleSubmit, formState: {errors}} = useForm();
-  const submitForm = (data) => {
-    console.log(data)
-  }
-
+  
   return (
     <div>
         <form onSubmit={handleSubmit(submitForm)}>

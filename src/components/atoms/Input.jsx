@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Field, reduxForm } from 'redux-form'
 
 const Input = ({label, name, forName, type, step, min="0", max, register, errors}) => {
 
