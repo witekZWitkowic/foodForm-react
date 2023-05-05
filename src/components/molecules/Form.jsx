@@ -3,10 +3,16 @@ import {useForm} from 'react-hook-form';
 import {Input, Select, Button, InputDuration} from '../index';
 import axios from 'axios';
 
+
 const Form = () => {
 
   const {register, handleSubmit, formState: {errors}} = useForm();
   
+
+  const submitForm = (data) => {
+    alert(JSON.stringify(data))
+  }
+
   return (
     <div>
         <form onSubmit={handleSubmit(submitForm)}>

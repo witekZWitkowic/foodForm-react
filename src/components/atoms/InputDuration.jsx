@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 const Input = ({label, name, forName, register, errors}) => {
 
   const [value, setValue] = useState("");
-
   const [isClicked, setIsClicked] = useState(false);
  
   const handleChange = (e) => {
