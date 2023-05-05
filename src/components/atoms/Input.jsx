@@ -18,9 +18,8 @@ const Input = ({label, name, forName, type, step, min="0", max, register, errors
             step={step}
             min={min}
             max={max}
-            value={value}
             onInput={handleChange}
-            className={`mb-10 pl-1 border-b-[1px] ${errors[name] ? "border-red-300" : "border-zinc-300"} focus:outline-none sm:w-[350px]`}
+            className={`mb-10 pl-1 border-b-[1px] ${errors[name] ? "border-red-300" : "border-zinc-300"} focus:outline-none lg:w-[350px] sm:w-[300px] xs:w-[320px] w-[230px]`}
             />
             {errors[name] ? <p className='text-[10px] absolute top-6 left-1 text-red-600'>This field is required</p> : <></>}
         </div>

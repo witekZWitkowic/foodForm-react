@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { motion } from "framer-motion";
 import Input from './Input';
 import { sandwichImg, pizzaImg, soupImg } from '../../assets/index';
 
@@ -25,10 +24,10 @@ const Select = ({label, register, errors}) => {
     <div className='flex flex-col'>
       <label className={`floating-label ml-1 text-zinc-600 ${food && 'filled'}`}>{label}</label>
       <select 
-      {...register("type", {required: 'Dish type is required'})} 
+      {...register("type", {required: 'Dish type is required'})}
       value={food}
       onChange={handleOnChange}
-      className={`mb-10 border-b-[1px] text-[18px] text-zinc-600 ${errors.type ? "border-red-300" : "border-zinc-300"} focus:outline-none sm:w-[350px]`}>
+      className={`mb-10 border-b-[1px] text-[18px] text-zinc-600 ${errors.type ? "border-red-300" : "border-zinc-300"} focus:outline-none lg:w-[350px] sm:w-[300px] xs:w-[320px] w-[230px]`}>
         {options.map((option, index) => (
           <option key={index} value={option} className=''>{option.toUpperCase()}</option>
         ))}
@@ -43,9 +42,9 @@ const Select = ({label, register, errors}) => {
       {sandwich && <Input register={register} errors={errors} label="Slices of Bread" name="slices_of_bread" type="number"/>}
       
       {/* <img src={pizza ? pizzaImg : soup ? soupImg : sandwich ? sandwichImg : ""} className='w-[350px] absolute top-[230px] left-[-160px] z-[-1]'/> */}
-      <img src={pizzaImg} className={`w-[350px] absolute top-[180px] ease-in-out  ${pizza ? "duration-300 left-[-160px]" : "left-[0]"} z-[-1]`}/>
-      <img src={soupImg} className={`w-[350px] absolute top-[230px] ease-in-out  ${soup ? "duration-300 left-[-160px]" : "left-[0]"} z-[-1]`}/>
-      <img src={sandwichImg} className={`w-[350px] absolute top-[230px] ease-in-out  ${sandwich ? "duration-300 left-[-160px]" : "left-[0]"} z-[-1]`}/>
+      <img src={pizzaImg} className={`sm:block hidden md:w-[350px] sm:w-[300px] absolute top-[180px] ease-in-out  ${pizza ? "duration-300 md:left-[-160px] sm:left-[-140px]" : "left-[0]"} z-[-1]`}/>
+      <img src={soupImg} className={`sm:block hidden md:w-[350px] sm:w-[300px] absolute top-[230px] ease-in-out  ${soup ? "duration-300 md:left-[-160px] sm:left-[-140px]" : "left-[0]"} z-[-1]`}/>
+      <img src={sandwichImg} className={`sm:block hidden md:w-[350px] sm:w-[300px] absolute top-[230px] ease-in-out  ${sandwich ? "duration-300 md:left-[-160px] sm:left-[-140px]" : "left-[0]"} z-[-1]`}/>
       
     </div>
   )

@@ -5,9 +5,9 @@ import axios from 'axios';
 
 const Form = () => {
 
-  const {register, handleSubmit, reset, formState: {errors}} = useForm()
+  const {register, handleSubmit, reset, formState: { errors }} = useForm({shouldUnregister: true})
 
-  const submitForm = (data) => {
+  const submitForm = (data) => {   
      axios.post("https://umzzcc503l.execute-api.us-west-2.amazonaws.com/dishes/", setPayload(data))
     .then((response) => {
       console.log(response.data)
@@ -15,6 +15,7 @@ const Form = () => {
     .catch((errors) => {
       console.error(errors)
     });
+    reset();
   }
     
   const setPayload = (data) =>{
@@ -38,8 +39,6 @@ const Form = () => {
     return postData;
   }
 
-  
-
   return (
     <div>
         <form onSubmit={handleSubmit(submitForm)}>
@@ -48,7 +47,7 @@ const Form = () => {
                 <InputDuration  register={register} errors={errors} name="preparation_time" label="Set Preparation Time"/>
                 <Select register={register} errors={errors} label="Select Dish Type" />
             </div>
-            <div className='absolute bottom-20 left-[35%]'>
+            <div className='absolute lg:bottom-20 xxs:bottom-10 lg:left-[35%] xs:left-[30%] left-[25%]'>
                 <Button text="Submit!" type="submit" background={"bg-orange-gradient"} color={"text-white"}/>
             </div>
         </form>

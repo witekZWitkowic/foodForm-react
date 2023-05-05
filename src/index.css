@@ -89,3 +89,6 @@ html {
     @apply
     text-gradient;
   }
+  .notFilled{
+    transform: translate(0, 0) scale(1);
+  }

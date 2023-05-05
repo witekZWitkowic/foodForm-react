@@ -5,12 +5,12 @@ import {cook} from '../../assets/index'
 const Main = () => {
   return (
     <section className=''>
-        <div className='bg-white w-[550px] h-[700px] p-10 mx-auto xl:mt-20 mt-5 rounded-t-lg rounded-l-lg relative form-container'>
+        <div className='bg-white lg:w-[550px] md:w-[430px] sm:w-[400px] xs:w-[400px] w-[310px] lg:h-[700px] sm:h-[650px] h-[90vh] p-10 mx-auto xl:mt-20 mt-5 rounded-t-lg rounded-l-lg relative form-container'>
             <h1 className='text-gradient font-bold sm:text-[60px] text-[42px]'>DishBrary</h1>
-            <p className='text-gray text-[22px] mb-16'>Create your <span className='text-gradient font-bold'>awesome</span> dish library!</p>
+            <p className='text-gray md:text-[22px] xs:text-[20px] text-[14px] mb-16'>Create your <span className='text-gradient font-bold'>awesome</span> dish library!</p>
             <Form />
         </div>
-        <div className='absolute xl:top-[84px] top-[55px] xl:left-[1147px] lg:left-[907px] md:left-[699px] left-[571px] xl:scale-100 scale-90'>
+        <div className='absolute xl:top-[84px] lg:top-[24px] md:top-[72px] top-[55px] xl:left-[1147px] lg:left-[907px] md:left-[651px] md:block hidden '>
           <img src={cook} />
         </div>
     </section>
