@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {useForm} from 'react-hook-form';
 import {Input, Select, Button, InputDuration} from '../index';
 import axios from 'axios';
 
 const Form = () => {
-
-  const {register, handleSubmit, reset, formState: { errors }} = useForm({shouldUnregister: true})
+  const [successMsg, setSuccessMsg] = useState("");
+  const {register, handleSubmit, reset, formState: { errors }} = useForm()
 
   const submitForm = (data) => {   
      axios.post("https://umzzcc503l.execute-api.us-west-2.amazonaws.com/dishes/", setPayload(data))
@@ -15,6 +15,10 @@ const Form = () => {
     .catch((errors) => {
       console.error(errors)
     });
+    setSuccessMsg("Horray! A new dish has been added to the library!")
+    setTimeout(() => {
+      setSuccessMsg("")
+    }, "3000");
     reset();
   }
     
@@ -42,6 +46,7 @@ const Form = () => {
   return (
     <div>
         <form onSubmit={handleSubmit(submitForm)}>
+        {successMsg && <p className="text-gradient lg:text-[16px] xs:text-[14px] text-[11px] font-bold absolute lg:bottom-[20%] bottom-[15%] lg:left-[15%] left-[10%]">{successMsg}</p>}
             <div>
                 <Input register={register} errors={errors} name="name" label="Name your dish" type="text"/>
                 <InputDuration  register={register} errors={errors} name="preparation_time" label="Set Preparation Time"/>
