@@ -10,7 +10,7 @@ const Input = ({label, name, forName, register, errors}) => {
   }
   return (
     <div className='input-container'>
-        <label htmlFor={forName} className={`floating-label text-zinc-600 ml-1 ${value ? 'filled' : 'notFilled'}`}>{label}</label>
+        <label htmlFor={forName} className={`floating-label text-zinc-600 ml-1 ${value && 'filled'}`}>{label}</label>
         <div>
             <input
             {...register(name, {required: true})}

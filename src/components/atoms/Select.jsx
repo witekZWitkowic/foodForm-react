@@ -40,11 +40,10 @@ const Select = ({label, register, errors}) => {
         </div>}
       {soup && <Input register={register} errors={errors} label="Spiciness Scale" name="spiciness_scale" type="number" min="1" max="10"/> }
       {sandwich && <Input register={register} errors={errors} label="Slices of Bread" name="slices_of_bread" type="number"/>}
-      
-      {/* <img src={pizza ? pizzaImg : soup ? soupImg : sandwich ? sandwichImg : ""} className='w-[350px] absolute top-[230px] left-[-160px] z-[-1]'/> */}
-      <img src={pizzaImg} className={`sm:block hidden md:w-[350px] sm:w-[300px] absolute top-[180px] ease-in-out  ${pizza ? "duration-300 md:left-[-160px] sm:left-[-140px]" : "left-[0]"} z-[-1]`}/>
-      <img src={soupImg} className={`sm:block hidden md:w-[350px] sm:w-[300px] absolute top-[230px] ease-in-out  ${soup ? "duration-300 md:left-[-160px] sm:left-[-140px]" : "left-[0]"} z-[-1]`}/>
-      <img src={sandwichImg} className={`sm:block hidden md:w-[350px] sm:w-[300px] absolute top-[230px] ease-in-out  ${sandwich ? "duration-300 md:left-[-160px] sm:left-[-140px]" : "left-[0]"} z-[-1]`}/>
+  
+      <img src={pizzaImg} alt='Pizza' className={`sm:block hidden md:w-[350px] sm:w-[300px] absolute top-[180px] ease-in-out  ${pizza ? "duration-300 md:left-[-160px] sm:left-[-140px]" : "left-[0]"} z-[-1]`}/>
+      <img src={soupImg} alt='Soup' className={`sm:block hidden md:w-[350px] sm:w-[300px] absolute top-[230px] ease-in-out  ${soup ? "duration-300 md:left-[-160px] sm:left-[-140px]" : "left-[0]"} z-[-1]`}/>
+      <img src={sandwichImg} alt='Sandwich' className={`sm:block hidden md:w-[350px] sm:w-[300px] absolute top-[230px] ease-in-out  ${sandwich ? "duration-300 md:left-[-160px] sm:left-[-140px]" : "left-[0]"} z-[-1]`}/>
       
     </div>
   )

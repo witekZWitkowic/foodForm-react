@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import {useForm} from 'react-hook-form';
-import {Input, Select, Button, InputDuration} from '../index';
+import { useForm } from 'react-hook-form';
+import { Input, Select, Button, InputDuration } from '../index';
 import axios from 'axios';
 
 const Form = () => {
@@ -15,7 +15,7 @@ const Form = () => {
     .catch((errors) => {
       console.error(errors)
     });
-    setSuccessMsg("Horray! A new dish has been added to the library!")
+    setSuccessMsg("Hooray! A new dish has been added to the library!")
     setTimeout(() => {
       setSuccessMsg("")
     }, "3000");

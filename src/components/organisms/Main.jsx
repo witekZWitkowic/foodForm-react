@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form } from '../index'
-import {cook} from '../../assets/index'
+import { cook } from '../../assets/index'
 
 const Main = () => {
   return (
@@ -11,7 +11,7 @@ const Main = () => {
             <Form />
         </div>
         <div className='absolute xl:top-[84px] lg:top-[24px] md:top-[72px] top-[55px] xl:left-[1147px] lg:left-[907px] md:left-[651px] md:block hidden '>
-          <img src={cook} />
+          <img src={cook} alt='Cook lady' />
         </div>
     </section>
   )
